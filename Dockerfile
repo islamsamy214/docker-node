@@ -2,6 +2,7 @@ FROM node
 # specify the working directory and this one to tell any coming command that you will ran in here
 WORKDIR /app
 # copy the package.json file to the working directory, BTW you can use COPY . . to copy all files and it will copy to the working directory but this is better to see where you are copying
+# we copied this first to not run the npm install every time we change the code, because it will take from cache
 COPY package.json /app
 # install depedancies
 RUN npm install
